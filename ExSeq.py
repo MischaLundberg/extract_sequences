@@ -12,13 +12,7 @@ import os
 import argparse
 import time
 
-infile="test.fa"
-outfilename=""
-read_starter=">"
-get_n_reads=2
-start_on_read=2
-
-def main():
+if __name__ == '__main__':
     parser = argparse.ArgumentParser(description = "Code to run ourGWAS with VCF, Plink1/2, and tsv files")
     parser.add_argument('--input', 
         type = str, 
@@ -45,16 +39,17 @@ def main():
     
     args = parser.parse_args()
     
+    main(args)
+    
+    
+    
+def main(args):
     parsed_data = parse_sequences(args.input, args.readIdentifier, args.nReads, args.firstRead)
 
     with open(args.output, 'w') as f:
         for line in parsed_data:
             f.write(line)
     print("Output file saved here: ",args.output)
-
-
-
-   
 
     
 
@@ -88,5 +83,3 @@ def parse_sequences(infile,read_starter,get_n_reads,start_on_read):
                     output.append(seq)
             i+=1
     return(output)
-
-parse_sequences(infile,">",3,0)
