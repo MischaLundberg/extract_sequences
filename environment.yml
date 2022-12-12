@@ -1,0 +1,5 @@
+name: ExSeq
+channels:
+- bioconda
+dependencies:
+- python=3.9
