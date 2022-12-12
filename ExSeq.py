@@ -14,25 +14,25 @@ import time
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description = "Code to run ourGWAS with VCF, Plink1/2, and tsv files")
-    parser.add_argument('--input', 
+    parser.add_argument('-i','--input', 
         type = str, 
         help = "Path to input file; please supply filename as following \"dir/to/input_file.fa\"", 
         required = True)
-    parser.add_argument('--readIdentifier', 
+    parser.add_argument('-r','--readIdentifier', 
         type = str, 
         help = "Identifier of each read, i.e. > or #; use quotes. Default: \">\"", 
         required = False,
         default = ">")
-    parser.add_argument('--nReads', 
+    parser.add_argument('-n','--nReads', 
         type = int, 
         help = "How many reads you want to output", 
         required = True)
-    parser.add_argument('--firstRead', 
+    parser.add_argument('-f','--firstRead', 
         type = int, 
         help = "At which read the ourput should start. Default: 1 {first read)", 
         required = False,
         default=1)
-    parser.add_argument('--output', 
+    parser.add_argument('-o','--output', 
         type = str, 
         help = "Path to output file; please supply filename as following \"dir/to/input_file.fa\"", 
         required = True)
