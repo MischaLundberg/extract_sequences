@@ -1,5 +1,6 @@
 # extract_sequences (ExSeq)
 [![DOI](https://zenodo.org/badge/577435502.svg)](https://zenodo.org/badge/latestdoi/577435502)
+
 Python code to extract sequences from sequencing (e.g. fasta/bisulfite) files.
 
 ---
