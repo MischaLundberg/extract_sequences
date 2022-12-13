@@ -39,16 +39,11 @@ usage: ExSeq.py [-h] -i INPUT [--raadIdentifier READIDENTIFIER] --nReads NREADS 
 
 Extracting sequences from sequencing files (e.g. fasta/bisulfite).
 
-:information_source: Please remember, if you are not natively using Python 3 to load the environment ```conda activate CpGmeth```
+:information_source: Please remember, if you are not natively using Python 3 to load the environment ```conda activate ExSeq```
 
 You can start a run like: 
 ```
-/DIRECTORY/ExSeq.py -i /FILE_DIRECTORY/simplebs_480.sorted_CpG.bedGraph -r /FILE_DIRECTORY/L1HS.rmsk.txt -o /FILE_DIRECTORY/simplebs_480.bedGraph
-```
-
-If you want to start your run with *FASTQ* files, your arguments should be set as following:
-```
-/DIRECTORY/CpG_Meth.py -i /FILE_DIRECTORY/simplebs_480.1.fastq -n 5 -o /FILE_DIRECTORY/simplebs_480.1.1-5.fastq 
+/DIRECTORY/ExSeq.py -i /FILE_DIRECTORY/simplebs_480.1.fastq -n 5 -o /FILE_DIRECTORY/simplebs_480.1.1-5.fastq 
 ```
 ---
 
