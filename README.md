@@ -36,7 +36,7 @@ If you receive any errors while running ExSeq, please ensure your versioning for
 # Input
 
 ```
-usage: ExSeq.py [-h] -i INPUT [--raadIdentifier READIDENTIFIER] --nReads NREADS [--firstRead FIRSTREAD] --output OUTPUT
+usage: ExSeq.py [-h] -i INPUT [--raadIdentifier READIDENTIFIER] --nReads NREADS [--firstRead FIRSTREAD] [-e EXCLUDEREADS] --output OUTPUT
 ```
 
 Extracting sequences from sequencing files (e.g. fasta/bisulfite).
@@ -47,6 +47,11 @@ You can start a run like:
 ```
 /DIRECTORY/ExSeq.py -i /FILE_DIRECTORY/simplebs_480.1.fastq -n 5 -o /FILE_DIRECTORY/simplebs_480.1.1-5.fastq 
 ```
+
+If you want to exclude certain reads, use the option -e. This will return N reads excluding the one you supplied. 
+The -e option allows as input either strings separated by a comma, or a file with one read name per line.
+
+Please be aware, that the read name supplied has to be the same as in the input file.
 ---
 
 # Further development
