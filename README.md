@@ -28,6 +28,18 @@ If you are using a Anaconda environment, you can do so by typing
 conda env update --name ExSeq --file environment.yml
 ```
 
+# How to update your current version of ExSeq
+
+First you'll need to cd your self into the directory of ExSeq
+```
+git remote add origin https://github.com/MischaLundberg/extract_sequences.git
+git pull origin master
+```
+
+If you want to be safe, also update your environment:
+```
+conda env update --name ExSeq --file environment.yml
+```
 
 If you receive any errors while running ExSeq, please ensure your versioning for the prerequisites is according to the tested versions.
 
@@ -52,15 +64,21 @@ If you want to exclude certain reads, use the option -e. This will return N read
 The -e option allows as input either strings separated by a comma, or a file with one read name per line.
 
 Please be aware, that the read name supplied has to be the same as in the input file.
+
 ---
 
 # Further development
+
 Please contact me for future developments.
+
 ---
 
 # Contact
+
 For questions or errors, either create a issue/pullrequest or contact me via email (mischa(dot)lundberg(at)regionh(dot)dk
 
 ---
 
-# Dont forget to cite
+# Dont forget to cite 
+
+[![DOI](https://zenodo.org/badge/577435502.svg)](https://zenodo.org/badge/latestdoi/577435502)
