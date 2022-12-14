@@ -59,6 +59,7 @@ You can start a run like:
 ```
 /DIRECTORY/ExSeq.py -i /FILE_DIRECTORY/simplebs_480.1.fastq -n 5 -o /FILE_DIRECTORY/simplebs_480.1.1-5.fastq 
 ```
+:information_source: The input file does NOT need to be a fasta/fastq file. It can be any suffix, as long as the file is a plain file. Column separations are not taken care of! The file is read per line.
 
 If you want to exclude certain reads, use the option -e. This will return N reads excluding the one you supplied. 
 The -e option allows as input either strings separated by a comma, or a file with one read name per line.
