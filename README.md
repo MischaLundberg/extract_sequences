@@ -75,7 +75,7 @@ Please contact me for future developments.
 
 # Contact
 
-For questions or errors, either create a issue/pullrequest or contact me via email (mischa(dot)lundberg(at)regionh(dot)dk
+For questions or errors, either create a issue/pullrequest or contact me via email (mischa(dot)lundberg(at)regionh(dot)dk)
 
 ---
 
