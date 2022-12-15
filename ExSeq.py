@@ -6,7 +6,7 @@
 # Mail: mischa.lundberg@regionh.dk
 ################################################
 
-__version__ = '0.1.1'
+__version__ = '0.1.0'
 import sys
 import os
 import argparse
@@ -32,17 +32,18 @@ def parse_sequences(infile,read_starter,get_n_reads,start_on_read,seq_exclusions
             with open(seq_exclusions) as exc_file:
                 to_exclude = exc_file.readlines()
             exclusions=True
+            print("Detected a file with exclusions (",len(to_exclude),"reads to exclude)")
         elif isinstance(seq_exclusions, str):
             to_exclude = seq_exclusions.split(",")
             exclusions=True
+            print("Detected a list (",len(to_exclude),") of reads as input (no file).")
         else:
             print("Could not identify your input of sequences to exclude. Exiting!")
             sys.exit()
         cleaned_exc = []
         for i in to_exclude:
             cleaned_exc.append(i.replace("\n", ""))
-        to_exclude = cleaned_exc
-    print(to_exclude)
+        to_exclude = list(filter(None, cleaned_exc))
     with open(infile) as f:
         count=0
         seqs = f.readlines()
@@ -53,9 +54,12 @@ def parse_sequences(infile,read_starter,get_n_reads,start_on_read,seq_exclusions
 
         if exclusions:
             tmp = []
-            for curr_exc in to_exclude:
-                tmp.append(list(filter(lambda i: curr_exc[0] in i, seqs))[0])
-            print("Excluding up to ",len(to_exclude)," sequences")
+            try:
+                for curr_exc in to_exclude:
+                    tmp.append(list(filter(lambda i: curr_exc[0] in i, seqs))[0])
+                print("Excluding up to ",len(to_exclude)," sequences")
+            except Exception as e:
+                print("An Error occured while parsing your exclusion",curr_exc[0],": ",repr(e))
         if start_on_read == 0:
             get_n_reads+=1
         while run: 
