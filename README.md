@@ -32,7 +32,7 @@ conda env update --name ExSeq --file environment.yml
 
 First you'll need to cd your self into the directory of ExSeq
 ```
-git remote add origin https://github.com/MischaLundberg/extract_sequences.git
+git remote add origin git@github.com:MischaLundberg/extract_sequences.git
 git pull origin master
 ```
 
