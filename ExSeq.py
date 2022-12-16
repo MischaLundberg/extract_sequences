@@ -42,7 +42,7 @@ def parse_sequences(infile,read_starter,get_n_reads,start_on_read,seq_exclusions
             sys.exit()
         cleaned_exc = []
         for i in to_exclude:
-            cleaned_exc.append(i.replace("\n", ""))
+            cleaned_exc.append(i.replace("\n", "").replace(read_starter,""))
         to_exclude = list(filter(None, cleaned_exc))
     #print(to_exclude)
     with open(infile) as f:
